@@ -1,0 +1,30 @@
+{% extends "templ.html" %}
+
+{% block content %}
+<h1>Доступные переговорки</h1>
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-sm-6">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID переговорки</th>
+                        <th>Наименование</th>
+                        <th>Этаж</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in rooms %}
+                    <tr>
+                        <td>{{ r.id }}</td>
+                        <td>{{ r.name }}</td>
+                        <td>{{ r.floor }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

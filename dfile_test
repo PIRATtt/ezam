@@ -1,0 +1,5 @@
+FROM python:3.12-rc-bullseye
+COPY . .
+RUN pip install --upgrade pip && pip install flask && pip install pytest
+WORKDIR .
+ENTRYPOINT ["pytest", "test.py"]
